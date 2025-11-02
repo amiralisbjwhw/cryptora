@@ -190,3 +190,7 @@ def group_inbox(group_id: int, user=Depends(get_current_user)):
 @app.get("/test")
 def test():
     return {"status": "🧪 تست موفق"}
+
+@app.get("/")
+def home():
+    return {"message": "✅ سرور Cryptora با موفقیت اجرا شد!"}
