@@ -9,6 +9,8 @@ from utils import hash_password
 app = FastAPI()
 create_db_and_tables()
 
+from health import router as health_router
+app.include_router(health_router)
 @app.post("/signup")
 def signup(user: SignupModel):
     with Session(engine) as session:
@@ -18,6 +20,9 @@ def signup(user: SignupModel):
         session.add(new_user)
         session.commit()
         return {"message": f"✅ ثبت‌نام کاربر {user.username} با نقش {user.role} انجام شد"}
+@app.get("/healthz")
+def health_check():
+    return {"status": "ok ✅"}
 
 @app.post("/login")
 def login(user: LoginModel):
