@@ -186,3 +186,7 @@ def group_inbox(group_id: int, user=Depends(get_current_user)):
             ],
             "count": len(messages)
         }
+
+@app.get("/test")
+def test():
+    return {"status": "🧪 تست موفق"}
