@@ -1,7 +1,7 @@
-fastapi
-uvicorn
-sqlmodel
-python-multipart
-passlib[bcrypt]
-python-jose
-pyotp
+fastapi==0.110.0
+uvicorn==0.23.2
+sqlmodel==0.0.14
+python-multipart==0.0.6
+passlib[bcrypt]==1.7.4
+python-jose==3.3.0
+pyotp==2.9.0
